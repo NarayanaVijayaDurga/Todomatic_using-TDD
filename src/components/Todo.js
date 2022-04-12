@@ -43,7 +43,7 @@ const wasEditing = usePrevious(isEditing);
   onChange={handleChange}/>
       </div>
       <div className="btn-group">
-      <button
+      <button 
   type="button"
   className="btn todo-cancel"
   onClick={() => setEditing(false)}
@@ -63,6 +63,7 @@ const wasEditing = usePrevious(isEditing);
     <div className="stack-small">
       <div className="c-cb">
           <input
+          data-testid = "checkbox-id"
             id={props.id}
             type="checkbox"
             defaultChecked={props.completed}
@@ -73,12 +74,12 @@ const wasEditing = usePrevious(isEditing);
           </label>
         </div>
         <div className="btn-group">
-        <button type="button" className="btn" onClick={() => setEditing(true)}
+        <button type="button" data-testid = "edit-btn" className="btn" onClick={() => setEditing(true)}
         ref={editButtonRef}>
   Edit <span className="visually-hidden">{props.name}</span>
 </button>
 
-          <button
+          <button data-testid = "delete-btn"
             type="button"
             className="btn btn__danger"
             onClick={() => props.deleteTask(props.id)}

@@ -14,14 +14,15 @@ function Form(props) {
     }
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <form data-testid="todo-form" onSubmit={handleSubmit}>
       <h2 className="label-wrapper">
-        <label htmlFor="new-todo-input" className="label__lg">
+        <label htmlFor="new-todo-input" className="label__lg" data-testid = "todo-input-label">
           What needs to be done?
         </label>
       </h2>
       <input
         type="text"
+        data-testid = "todo-input-id"
         id="new-todo-input"
         className="input input__lg"
         name="text"
@@ -29,7 +30,7 @@ function Form(props) {
         value={name}
         onChange={handleChange}
       />
-      <button type="submit" className="btn btn__primary btn__lg">
+      <button type="submit" data-testid="add-btn" className="btn btn__primary btn__lg" >
         Add
       </button>
     </form>
